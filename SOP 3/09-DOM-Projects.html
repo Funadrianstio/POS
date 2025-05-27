@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    
+		<p>YouTube Subscribe Button</p>
+		<button onclick = "
+		  subscribe();
+		" class = js-subscribed-button>Subscribe</button> <!-- cannot put spaces here because it also looks at spaces-->
+
+		<p>Amazon Shipping Calculator</p>
+		<input placeholder = "Cost of Order" class= "js-cost-input" 
+			onkeydown = " handleCostKeydown(event); // need to include the event parameter to sent to the function
+			"> 
+		<!--Event is an object that all keys have-->
+		<!-- Clicks, keydowns = events-->
+		<!-- onclick, onkeydown = event listeners-->
+		<button onclick = "
+		calculateTotal();
+		">Calculate</button>
+
+		<p class = "js-total-cost"></p>
+
+    <script>
+		function subscribe(){
+			const buttonElement = document.querySelector('.js-subscribed-button');
+				if (buttonElement.innerText === 'Subscribe') { // innerText ignores the spaces that may be present in HTML code
+					buttonElement.innerHTML = 'Subscribed';
+				} else {
+						buttonElement.innerHTML = 'Subscribe';
+				}
+			}
+		function calculateTotal(){
+			const inputElement = document.querySelector('.js-cost-input');
+			let cost = Number(inputElement.value); // due to type coersion - values from DOM will be string; need to converst to number to do math
+
+				if (cost < 40) {
+					cost += 10;
+				}
+
+				document.querySelector ('.js-total-cost')
+					.innerHTML = `$${cost}`;
+			}
+		function handleCostKeydown (event){
+				if (event.key === 'Enter') {
+					calculateTotal();
+				}
+			}
+
+    </script>
+  </body>
+</html>

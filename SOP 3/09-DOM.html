@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  
+  <body>
+    <button>Hello</button>
+    <button class = "js-button">Second Button</button> <!-- using classes makes getting button easier -->
+    <!-- Its common to start with js- to make it clear its being used for JS-->
+    <script>
+//syntax rules
+// document.title = changed; (changes the title of the tab)
+// console.log(document.body.innerHTML); -- shows we can link JS with HTML
+// console.log(typeof document.body); // shows us the body is a html object
+
+/*
+//using DOM to change HTML using JS -- gives full control over the webpage
+    console.log(document.body.innerHTML); 
+    document.body.innerHTML = '<button>Good Job</button>';
+    console.log(document.body.innerHTML);
+*/
+
+
+//docment.queserySelector -- can get any element in the page and put it inside out JS 
+// when an HTML element is inside JS, it is just an object
+    console.log(document.querySelector('button').innerHTML); // gets the first button in the document
+    
+    document.querySelector('button')
+      .innerHTML = 'Changed';  // usually put on 2 lines to make it easier to read
+
+
+     const buttonElement = document.querySelector('.js-button'); //looking for all buttons with the class of js-button
+      //common to end w/ 'Elm/ Element' to show its an element for HTML
+      console.log(buttonElement);
+
+/*
+//DOM is a built in oject in JavaScript known as Document Object Model -- models the structure of a web page
+        document.body.innerHTML = "hello"; // this is changing all of the inner HTML text to hello
+        // changes the web page
+
+        document.title = "Good Job" // changes title of tab'
+
+
+*/
+    </script>
+  </body>
+</html>
