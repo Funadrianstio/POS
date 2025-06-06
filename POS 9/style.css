@@ -1,0 +1,289 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white; /* for visibility on dark background */
+}
+
+
+/* Container to hold two tables side-by-side */
+.tables-wrapper {
+  display: flex;
+  justify-content: center;  /* center tables horizontally */
+  gap: 2rem;
+  max-width: 1000px;   /* max width for container */
+  margin: 0 auto;      /* center container horizontally */
+  flex-wrap: nowrap;   /* keep tables side-by-side */
+}
+
+/* rest unchanged */
+table {
+  width: 700px;           /* fixed width */
+  max-width: 700px;       /* prevent stretching */
+  border-collapse: collapse;
+  background-color: #000000; /* green background */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1rem;
+  border: 1px solid #000000; /* darker green border */
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+th {
+  background-color: #3a8e23; /* darker green header */
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.846);
+}
+
+tr:nth-child(even) {
+  background-color: #50BE30; /* lighter green even rows */
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff; /* main green odd rows */
+  color: white;
+}
+
+
+
+.form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-section label {
+  width: 160px; /* fixed label width */
+  margin-right: 1rem;
+  text-align: right;
+  font-weight: bold;
+  color: white; /* assuming dark bg */
+}
+
+.form-section input[type="number"] {
+  flex: 1;  /* take remaining horizontal space */
+  max-width: 250px; /* or whatever fixed width you want */
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.brand-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.exam-fees, .fitting-fees, .fitting-type {
+  flex: 1;
+  min-width: 300px;
+}
+
+
+.brand-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+}
+
+.eye-section {
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: px;
+  color: rgb(255, 255, 255); /* to keep text readable */
+  width: 450px;
+}
+
+.eye-section label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+  padding-left: 50px;
+}
+
+/* Button styles updated for alignment and shape */
+.toggle-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;          /* Rounded corners like inputs */
+  border: 1px solid #ccc;
+  background-color: #ffffff;   /* Default blue */
+  color: black;
+  font-size: 1rem;
+  min-width: 100px;            /* Consistent min width */
+  height: 38px;                /* Match input height */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  user-select: none;
+}
+
+/*fitting type toggle buttons */
+.toggle-btn.selected {
+  background-color: #50BE30 !important; /* Your green */
+  border-color: #50BE30 !important;
+  color: white;
+}
+
+/* Container for toggle buttons */
+.toggle-btn-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fitting-fees-title,
+.exam-fees-title {
+  text-align: center;
+  color: white; /* for visibility on dark background */
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+button {
+  border-radius: 5px;
+  /* other styles */
+}
+
+/* Dropdown styling to match buttons */
+select {
+  width: 265px;           /* fixed width */
+  height: 30px;           /* match button height */
+  padding: 0.5rem;        /* inside spacing */
+  border-radius: 5px;     /* same rounded corners as buttons */
+  border: 2px solid #010101; /* consistent border */
+  background-color: white;
+  font-size: 75%;
+  line-height: 1.2;
+  appearance: none;       /* remove default arrow styling for consistency */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Optional: hide default dropdown arrow in IE */
+select::-ms-expand {
+  display: none;
+}
+
+.manufacturer-btn {
+  background-color: #f5f5f5;  /* 👈 Change this to your desired base color */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.manufacturer-btn:hover {
+  background-color: #ffffffc3;
+}
+
+.manufacturer-btn.selected {
+   background-color: #50BE30;
+  color: white;
+  border: 2px solid #50BE30;
+}
+
+/* Shared horizontal layout for label + dropdown on same line */
+.form-subsection {
+  margin-bottom: 1rem;
+}
+
+.form-subsection.horizontal-align {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-subsection.horizontal-align label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+
+.brand {
+  padding-bottom: 15px;
+  padding-left: 50px;
+}
+
+.manufacter-label {
+  padding-left: 160px;
+  padding-bottom: 15px;
+}
+
+.Eye-Selection {
+  padding-left: 155px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.fitting-fees{
+  padding-top: 55px;
+}
+
+.table-label {
+  color: #ffffff;
+  
+}
+
+.left-table-label{
+  color: #ffffff;
+}
+
+.table-label-one {
+  color: #000000;
+  width: 215px;
+  heigh
+}

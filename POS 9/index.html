@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Check Out</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+    <body>
+    
+    <h1>Contact Lens Checkout</h1>
+
+<!-- Exam Fee Information -->
+<!-- Exam Fees + Fitting Type Column -->
+<div class="form-wrapper" style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
+  <div style="text-align: center;">
+    <!-- Exam Fees -->
+    <div class="exam-fees">
+      <h2>Exam Fees</h2>
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label for="exam-copay">Comprehensive Exam Copay:</label><br />
+        <input type="number" id="exam-copay" placeholder="$0.00" />
+      </div>
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label for="retinal-image">Retinal Image:</label><br />
+        <input type="number" id="retinal-image" placeholder="$0.00" />
+      </div>
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label for="additional-fees">Additional Fees:</label><br />
+        <input type="number" id="additional-fees" placeholder="$0.00" />
+      </div>
+    </div>
+
+    <!-- Fitting Type (underneath Exam Fees) -->
+    <div class="fitting-type" style="margin-top: 2rem;">
+      <h2>Fitting Type</h2>
+
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label>New or Established:</label><br />
+        <div class="toggle-button-group" data-group="new-est" style="display: flex; justify-content: center; gap: 0.5rem;">
+          <button class="toggle-btn" data-value="New">New</button>
+          <button class="toggle-btn" data-value="Est">Est</button>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label>Self Pay:</label><br />
+        <div class="toggle-button-group" data-group="self-pay" style="display: flex; justify-content: center; gap: 0.5rem;">
+          <button class="toggle-btn" data-value="Yes">Yes</button>
+          <button class="toggle-btn" data-value="No">No</button>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label>Fitting Type:</label><br />
+        <div class="toggle-button-group" data-group="fitting-type" style="display: flex; justify-content: center; gap: 0.5rem;">
+          <button class="toggle-btn" data-value="Sphere">Sphere</button>
+          <button class="toggle-btn" data-value="Toric">Toric</button>
+          <button class="toggle-btn" data-value="MF/Mono">MF/Mono</button>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-bottom: 1rem;">
+        <label>New to Brand:</label><br />
+        <div class="toggle-button-group" data-group="new-to-brand" style="display: flex; justify-content: center; gap: 0.5rem;">
+          <button class="toggle-btn" data-value="Yes">Yes</button>
+          <button class="toggle-btn" data-value="No">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fitting Fees Column -->
+  <div class="fitting-fees" style="text-align: center;">
+    <h2>Fitting Fees</h2>
+    <div class="form-section" style="margin-bottom: 1rem;">
+      <label for="fitting-copay">Fitting Fee Copay:</label><br />
+      <input type="number" id="fitting-copay" placeholder="$0.00" />
+    </div>
+    <div class="form-section" style="margin-bottom: 1rem;">
+      <label for="contact-lens-allowance">Contact Lens Allowance:</label><br />
+      <input type="number" id="contact-lens-allowance" placeholder="$0.00" />
+    </div>
+    <div class="form-section" style="margin-bottom: 1rem;">
+      <label for="fitting-discount-amount">Fitting Fee Discount ($):</label><br />
+      <input type="number" id="fitting-discount-amount" placeholder="$0.00" />
+    </div>
+    <div class="form-section" style="margin-bottom: 1rem;">
+      <label for="fitting-discount-percent">Fitting Fee Discount (%):</label><br />
+      <input type="number" id="fitting-discount-percent" placeholder="0%" />
+    </div>
+    <div class="form-section" style="margin-bottom: 1rem;">
+      <label for="ir-training">I&amp;R Training:</label><br />
+      <input type="number" id="ir-training" placeholder="$0.00" />
+    </div>
+    <div class="form-section" style="margin-bottom: 1rem;">
+      <label for="additional-savings">Additional Savings:</label><br />
+      <input type="number" id="additional-savings" placeholder="$0.00" />
+    </div>
+  </div>
+</div>
+
+
+    
+<!-- Brand Section -->
+  <div class="brand-section">
+<div style="text-align: center;">
+  <h2>Contact Lens Selection:</h2>
+</div>
+
+<div class="brand-wrapper">
+  <!-- Right Eye Section -->
+  <div class="eye-section">
+    <label class = "Eye-Selection">Right Eye</label>
+
+    <div class="form-subsection">
+      <label class = "manufacter-label">Manufacturer:</label>
+      <div class="button-container">
+        <button class="manufacturer-btn" data-eye="right" data-manufacturer="Alcon">Alcon</button>
+        <button class="manufacturer-btn" data-eye="right" data-manufacturer="B&L">B&L</button>
+        <button class="manufacturer-btn" data-eye="right" data-manufacturer="Cooper">Cooper</button>
+        <button class="manufacturer-btn" data-eye="right" data-manufacturer="Vistakon">Vistakon</button>
+      </div>
+    </div>
+
+    <div class="form-subsection horizontal-align">
+      <label class="brand" for="right-eye-brand">Brand:</label>
+      <div id="right-eye-dropdown"></div>
+    </div>
+  </div>
+
+  <!-- Left Eye Section -->
+  <div class="eye-section">
+    <label class = "Eye-Selection">Left Eye</label>
+
+    <div class="form-subsection">
+      <label class = "manufacter-label" >Manufacturer:</label>
+      <div class="button-container">
+        <button class="manufacturer-btn" data-eye="left" data-manufacturer="Alcon">Alcon</button>
+        <button class="manufacturer-btn" data-eye="left" data-manufacturer="B&L">B&L</button>
+        <button class="manufacturer-btn" data-eye="left" data-manufacturer="Cooper">Cooper</button>
+        <button class="manufacturer-btn" data-eye="left" data-manufacturer="Vistakon">Vistakon</button>
+      </div>
+    </div>
+
+    <div class="form-subsection horizontal-align">
+      <label class = "brand" for="left-eye-brand">Brand:</label>
+      <div id="left-eye-dropdown"></div>
+    </div>
+  </div>
+</div>
+
+<p></p>
+
+
+<div class="tables-wrapper">
+
+  <!-- First Table -->
+  <table border="1" cellspacing="0" cellpadding="8">
+    <thead>
+      <tr>
+        <th class = "table-label" colspan="2">Exam Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="table-label-one">Comprehensive Exam Copay</td>
+        <td id="examCopay">---</td>
+      </tr>
+      <tr>
+        <td class="table-label-one">Contact Lens Exam Copay</td>
+        <td id="clExam">---</td>
+      </tr>
+      <tr>
+        <td class="table-label-one">Retinal Image</td>
+        <td id="retinalImage">---</td>
+      </tr>
+      <tr>
+        <td class="table-label-one">I&amp;R Training</td>
+        <td id="irTraining">---</td>
+      </tr>
+      <tr>
+        <td class="table-label-one">Additional Fees</td>
+        <td id="additionalFeesDisplay">---</td>
+      </tr>
+      <tr>
+        <td class="table-label-one">OOP for Exam</td>
+        <td id="oopExam">---</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Second Table -->
+  <table>
+    <thead>
+      <tr>
+        <th  class = "table-label">Brand</th>
+        <th  class = "table-label" id="brand1">Select Brand</th>
+        <th  class = "table-label" id="brand2">Select Brand</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label-column">Number of Boxes</td>
+        <td id="boxes1">$0.00</td>
+        <td id="boxes2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">Price/Box</td>
+        <td id="price1">$0.00</td>
+        <td id="price2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">Contact Lens Allowance</td>
+        <td id="contactLensAllowanceDisplay" colspan="2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">Additional Savings</td>
+        <td colspan="2" id="additionalSavingsDisplay">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">OOP Total for Contacts</td>
+        <td colspan="2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">Rebate</td>
+        <td id="rebate-display-cell" colspan="2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">After Rebate Total</td>
+        <td colspan="2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">Final Cost/Box</td>
+        <td colspan="2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">Total Cost of Contacts</td>
+        <td colspan="2">$0.00</td>
+      </tr>
+      <tr>
+        <td class="label-column">OOP Total for Today</td>
+        <td colspan="2">$0.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+        <!--  Moved script to the bottom -->
+        <script src = "sheets.js"></script>
+    </body>
+</html>
